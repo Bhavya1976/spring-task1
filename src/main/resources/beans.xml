@@ -6,47 +6,42 @@
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="actor1" class="com.stackroute.domain.Actor">
-        <property name="name" value="Bhavya" />
-        <property name="gender" value="Female" />
-        <property name="age" value="22" />
+        <constructor-arg name="name" value="Bhavya" index="0" type="java.lang.String"/>
+        <constructor-arg name="gender" value="Female" index="1" type="java.lang.String"/>
+        <constructor-arg name="age" value="22" index="2" type="int"/>
 
     </bean>
 
     <bean id="actor2" class="com.stackroute.domain.Actor">
-        <property name="name" value="Sujatha" />
-        <property name="gender" value="Female" />
-        <property name="age" value="32" />
-
+        <constructor-arg name="name" index="0" value="Sujatha" type="java.lang.String" />
+        <constructor-arg name="gender" index="1" value="Female" type="java.lang.String"/>
+        <constructor-arg name="age" index="2" value="32" type="int"/>
     </bean>
 
 
-    <bean id="actor3" class="com.stackroute.domain.Actor">
-        <property name="name" value="Bhagya" />
-        <property name="gender" value="Female" />
-        <property name="age" value="30" />
-
-    </bean>
 
 
-    <bean id="movieFirst" class="com.stackroute.domain.Movie">
-        <property name="actor" ref="actor1" />
+
+    <bean name="movieFirst,movieTwo" class="com.stackroute.domain.Movie" scope="prototype">
+        <constructor-arg name="actor" ref="actor1" />
 
 
     </bean>
 
 
-    <bean id="movieTwo" class="com.stackroute.domain.Movie">
-        <property name="actor" ref="actor2" />
+<!--    <bean id="movieTwo" class="com.stackroute.domain.Movie">
+        <constructor-arg name="actor" ref="actor2" />
+
+
+    </bean> -->
+
+
+
+    <bean name="movieThree,movieFour" class="com.stackroute.domain.Movie">
+        <constructor-arg name="actor" ref="actor2" />
 
 
     </bean>
 
 
-    <bean id="movieThree" class="com.stackroute.domain.Movie">
-        <property name="actor" ref="actor3" />
-
-
-    </bean>
-
-
-</beans>
+ </beans>

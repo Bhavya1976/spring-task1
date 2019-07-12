@@ -8,6 +8,13 @@ public class Actor
     private String gender;
     private int age;
 
+    public Actor(String name, String gender, int age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
+
+
     //getter method for name
     public String getName() {
         return name;
@@ -24,7 +31,7 @@ public class Actor
     }
 
     //setter method for gender
-    public void setGender(String gender) {
+   public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -37,13 +44,9 @@ public class Actor
     public void setAge(int age) {
         this.age = age;
     }
-    @Override
-    public String toString() {
-        return "Actor{" +
-                "name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                ", age=" + age +
-                '}';
-    }
 
+   public void information(){
+
+       System.out.println("Name\t" + name + "\tAge\t" + age + "\tGender\t" +gender);
+   }
 }
