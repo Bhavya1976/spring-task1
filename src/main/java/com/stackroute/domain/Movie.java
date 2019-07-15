@@ -32,8 +32,8 @@ public class Movie implements ApplicationContextAware, BeanNameAware, BeanFactor
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext=applicationContext;
 
-        Movie moive=applicationContext.getBean(Movie.class);
-        moive.movieDisplay();
+        Movie movie = applicationContext.getBean(Movie.class);
+        movie.movieDisplay();
     }
 
     public void setBeanName(String str) {

@@ -11,11 +11,8 @@ public class Main {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
-        Movie movie = context.getBean("movie", Movie.class);
-        movie.movieDisplay();
-
-
-
+        Movie movie1 = context.getBean("movie", Movie.class);
+        movie1.movieDisplay();
 
 
     }
