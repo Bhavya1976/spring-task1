@@ -1,6 +1,5 @@
 package com.stackroute.domain;
 
-
 public class Actor {
 
     private String name;
@@ -15,9 +14,9 @@ public class Actor {
         this.age = age;
     }
 
-    //display the actor information
+
     public void display(){
-        System.out.println("name:\t"+name+" "+"\tgender:\t"+gender+" "+"\tage:\t"+age);
+        System.out.println("name\t"+name+" "+"\tgender\t"+gender+" "+"\tage\t"+age);
     }
 
 
