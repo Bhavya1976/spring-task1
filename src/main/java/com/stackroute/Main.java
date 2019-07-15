@@ -1,35 +1,29 @@
 package com.stackroute;
 import com.stackroute.domain.Movie;
 
-
+import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+import org.springframework.core.io.ClassPathResource;
 
 public class Main {
 
-    public  static  void main(String args []) {
+    public  static  void main(String[] args) {
 
 
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Movie movie1 = context.getBean("movie1", Movie.class);
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movieFirst=applicationContext.getBean("movieFirst",Movie.class);
-        movieFirst.display();
+       //diplaying the result by using the autowire-byName
 
-        Movie movieTwo=applicationContext.getBean("movieTwo",Movie.class);
-        movieTwo.display();
-
+        movie1.movieDisplay();
 
 
-        Movie movieThree=applicationContext.getBean("movieThree",Movie.class);
-        movieThree.display();
+        Movie moive2=context.getBean("movie2",Movie.class);
 
-        Movie movieFour=applicationContext.getBean("movieFour",Movie.class);
-        movieFour.display();
+        //displaying the result by using the autowire- byType
 
-
-        System.out.println(movieFirst==movieTwo);
-        System.out.println(movieThree==movieFour);
+        moive2.movieDisplay();
 
 
     }
