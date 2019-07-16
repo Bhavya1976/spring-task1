@@ -14,10 +14,11 @@ public class Actor {
         this.age = age;
     }
 
-
+    //display the actor information
     public void display(){
-        System.out.println("name\t"+name+" "+"\tgender\t"+gender+" "+"\tage\t"+age);
+        System.out.println("name is"+name+" "+"gender is"+gender+" "+"age is"+age);
     }
 
 
 }
+
