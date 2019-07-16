@@ -1,12 +1,52 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
-
-
+<?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="perform" class="com.stackroute.demo.BeanLifeCycleDemo" init-method="customInit" destroy-method="customDestroy"></bean>
+    <bean id="actor1" class="com.stackroute.domain.Actor">
+        <property name="name" value="Bhavya" />
+        <property name="gender" value="Female" />
+        <property name="age" value="22" />
+
+    </bean>
+
+    <bean id="actor2" class="com.stackroute.domain.Actor">
+        <property name="name" value="Sujatha" />
+        <property name="gender" value="Female" />
+        <property name="age" value="32" />
+
+    </bean>
+
+
+    <bean id="actor3" class="com.stackroute.domain.Actor">
+        <property name="name" value="Bhagya" />
+        <property name="gender" value="Female" />
+        <property name="age" value="30" />
+
+    </bean>
+
+
+    <bean id="movieFirst" class="com.stackroute.domain.Movie">
+        <property name="actor" ref="actor1" />
+
+
+    </bean>
+
+
+    <bean id="movieTwo" class="com.stackroute.domain.Movie">
+        <property name="actor" ref="actor2" />
+
+
+    </bean>
+
+
+    <bean id="movieThree" class="com.stackroute.domain.Movie">
+        <property name="actor" ref="actor3" />
+
+
+    </bean>
+
 
 </beans>
